@@ -9,9 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+        obsidian: '#0b0f19',
+        deepslate: '#0f172a',
+        neonteal: '#2dd4bf',
+        neonpurple: '#a855f7'
+      }
     },
   },
   plugins: [],
