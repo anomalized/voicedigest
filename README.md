@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VoiceDigest
+
+A modern, full-stack web application that utilizes Google's Gemini 2.5 Flash API to transcribe, summarize, and extract actionable items from voice notes. 
+
+Built with Next.js 14, Tailwind CSS, and the Web Audio API.
+
+## Features
+- **Record & Upload:** Native browser microphone recording or file upload (up to 20MB).
+- **Multi-lingual:** Supports English, Urdu, and Hindi natively.
+- **AI Processing:** Generates full transcripts, concise summaries, and bulleted action items.
+- **Developer UI:** Styled with a deep slate/obsidian dark mode, accented with neon teal and purple.
 
 ## Getting Started
 
-First, run the development server:
+### 1. Get a Free Gemini API Key
+1. Go to [Google AI Studio](https://aistudio.google.com/).
+2. Sign in with your Google account.
+3. Click on **"Get API key"** in the left sidebar.
+4. Click **"Create API key"** and copy the generated string.
 
-```bash
+### 2. Set Up Environment Variables
+Rename `.env.example` to `.env.local` and paste your API key:
+\`\`\`env
+GEMINI_API_KEY=your_copied_api_key_here
+\`\`\`
+
+### 3. Run Locally
+Install dependencies and start the development server:
+\`\`\`bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+\`\`\`
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## One-Click Deployment to Vercel
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Push your repository to GitHub.
+2. Go to [Vercel](https://vercel.com/) and log in.
+3. Click **"Add New..."** -> **"Project"**.
+4. Import your newly created GitHub repository.
+5. In the **Environment Variables** section during setup:
+   - Name: `GEMINI_API_KEY`
+   - Value: `[Paste your API key here]`
+6. Click **Deploy**.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Note: You can always update environment variables later in Vercel by navigating to your Project Settings > Environment Variables, adding the key, and triggering a new deployment.*
