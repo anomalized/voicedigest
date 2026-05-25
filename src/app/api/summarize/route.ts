@@ -37,10 +37,11 @@ export async function POST(req: NextRequest) {
     const text = result.response.text();
     return NextResponse.json({ text });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Gemini API Error:', error);
+    const message = error instanceof Error ? error.message : 'Failed to process audio. Ensure the file is a valid audio format and your API key is correct.';
     return NextResponse.json({ 
-      error: error.message || 'Failed to process audio. Ensure the file is a valid audio format and your API key is correct.' 
+      error: message
     }, { status: 500 });
   }
 }

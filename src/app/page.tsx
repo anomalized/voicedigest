@@ -50,7 +50,7 @@ export default function Home() {
 
       mediaRecorder.start();
       setIsRecording(true);
-    } catch (err) {
+    } catch {
       setError("Microphone access denied or unavailable.");
     }
   };
@@ -106,8 +106,9 @@ export default function Home() {
 
       setRawMarkdown(data.text);
       parseMarkdown(data.text);
-    } catch (err: any) {
-      setError(err.message || "An unexpected error occurred.");
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "An unexpected error occurred.";
+      setError(message);
     } finally {
       setLoading(false);
     }
