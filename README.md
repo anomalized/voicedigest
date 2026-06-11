@@ -4,6 +4,9 @@ A modern, full-stack web application that utilizes Google's Gemini 2.5 Flash API
 
 Built with Next.js 14, Tailwind CSS, and the Web Audio API.
 
+<img width="1295" height="471" alt="image" src="https://github.com/user-attachments/assets/8e052d44-e48f-4dc0-817b-0bbe6168fdf6" />
+
+
 ## Features
 - **Record & Upload:** Native browser microphone recording or file upload (up to 20MB).
 - **Multi-lingual:** Supports English, Urdu, and Hindi natively.
